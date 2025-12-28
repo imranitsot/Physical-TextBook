@@ -1,0 +1,11 @@
+{
+    "name": "physical-ai-textbook-root",
+    "private": true,
+    "scripts": {
+        "install-frontend": "cd frontend-book && npm install",
+        "build": "cd frontend-book && npm install && npm run build && node -e \"require('fs').cpSync('frontend-book/build', 'public', {recursive: true})\""
+    },
+    "engines": {
+        "node": "18.x"
+    }
+}
