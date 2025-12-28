@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/api/chat",
+            "destination": "/api/index.py"
+        },
+        {
+            "source": "/api/:path*",
+            "destination": "/api/index.py"
+        },
+        {
+            "source": "/chat",
+            "destination": "/api/index.py"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/$1"
+        }
+    ],
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        },
+        {
+            "src": "api/index.py",
+            "use": "@vercel/python"
+        }
+    ]
+}
