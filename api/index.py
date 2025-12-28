@@ -12,3 +12,4 @@ except ImportError:
     from backend.main import app
 
 # This 'app' object is what Vercel needs to see
+# (It is already imported above as 'app')
